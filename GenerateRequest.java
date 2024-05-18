@@ -1,7 +1,5 @@
 public class GenerateRequest implements Runnable {
 
-    private int k = 0;
-
     private int minFloor = 1;
     private int maxFloor = 10;
     private int requestCount = 1;
@@ -16,8 +14,6 @@ public class GenerateRequest implements Runnable {
 
         while (true) {
 
-            if (k == 6) break;
-
             int generatedCurFloor = minFloor + (int) (Math.random() * (maxFloor - minFloor + 1));
             int generatedReqFloor = minFloor + (int) (Math.random() * (maxFloor - minFloor + 1));
 
@@ -30,8 +26,6 @@ public class GenerateRequest implements Runnable {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-
-            k++;
 
         }
     }
